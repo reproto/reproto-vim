@@ -16,8 +16,8 @@ syn keyword reprotoStructure enum package tuple type interface
 syn match   reprotoField     /[a-zA-Z][_a-zA-Z0-9]*\(?\?:\)\@=/
 syn keyword reprotoOptional  ?
 
-syn keyword reprotoType i32 i64 u32 u64
-syn keyword reprotoType float double bool string bytes
+syn keyword reprotoType signed unsigned
+syn keyword reprotoType float double boolean string bytes
 syn match   reprotoType /[A-Z][_a-zA-Z0-9]*/
 syn keyword reprotoBool true false
 
