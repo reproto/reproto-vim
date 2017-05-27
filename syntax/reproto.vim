@@ -31,15 +31,15 @@ syn region  reprotoComment start="//" skip="\\$" end="$" keepend contains=@repro
 
 hi def link reprotoTodo      Todo
 
+hi def link reprotoInt       Number
+hi def link reprotoComment   Comment
+hi def link reprotoString    String
+
 hi def link reprotoSyntax    Include
 hi def link reprotoStructure Structure
 hi def link reprotoField     Statement
 hi def link reprotoOptional  Keyword
 hi def link reprotoType      Type
 hi def link reprotoBool      Boolean
-
-hi def link reprotoInt       Number
-hi def link reprotoComment   Comment
-hi def link reprotoString    String
 
 let b:current_syntax = "reproto"
