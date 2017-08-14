@@ -12,7 +12,7 @@ syn keyword reprotoTodo contained TODO FIXME XXX
 syn cluster reprotoCommentGrp contains=reprotoTodo
 
 syn keyword reprotoSyntax use as
-syn keyword reprotoStructure package type interface enum tuple service endpoint returns match
+syn keyword reprotoStructure package type interface enum tuple service endpoint accepts returns match
 syn match reprotoField /\<[a-zA-Z][_a-zA-Z0-9]*\(?\?:\)\@=/
 syn keyword reprotoOptional  ?
 
