@@ -11,10 +11,9 @@ syn case match
 syn keyword reprotoTodo contained TODO FIXME XXX
 syn cluster reprotoCommentGrp contains=reprotoTodo
 
-syn keyword reprotoSyntax use as
-syn keyword reprotoStructure package type interface enum tuple service endpoint accepts returns match
+syn keyword reprotoSyntax use as stream type interface enum tuple service
 syn match reprotoField /\<[a-zA-Z][_a-zA-Z0-9]*\(?\?:\)\@=/
-syn keyword reprotoOptional  ?
+syn keyword reprotoOptional \?
 
 syn match reprotoType /\<signed\(\/\d\+\)\?\>/
 syn match reprotoType /\<unsigned\(\/\d\+\)\?\>/
@@ -39,7 +38,6 @@ hi def link reprotoCommentLineDoc SpecialComment
 hi def link reprotoString String
 
 hi def link reprotoSyntax Include
-hi def link reprotoStructure Structure
 hi def link reprotoField Statement
 hi def link reprotoOptional Keyword
 hi def link reprotoType Type
