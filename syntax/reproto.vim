@@ -16,10 +16,8 @@ syn keyword reprotoStorageClass type interface enum tuple service
 syn match reprotoField /\<[a-zA-Z][_a-zA-Z0-9]*\(?\?:\)\@=/
 syn keyword reprotoOptional \?
 
-syn match reprotoType /\<signed\(\/\d\+\)\?\>/
-syn match reprotoType /\<unsigned\(\/\d\+\)\?\>/
 syn match reprotoType /\<[A-Z][_a-zA-Z0-9]*\>/
-syn keyword reprotoType float double boolean string bytes
+syn keyword reprotoType float double boolean string bytes u32 u64 i32 i64
 syn keyword reprotoBool true false
 
 syn match reprotoNumber /-\?\<\d\+\(\.\d\+\)\?\>/
