@@ -16,7 +16,7 @@ syn match reprotoSyntax /?/
 syn match reprotoSyntax /@/
 syn keyword reprotoSyntax use as stream
 syn keyword reprotoStorageClass type interface enum tuple service
-syn match reprotoIdentifier /\<[a-z][_a-z0-9]*\>/
+syn match reprotoIdentifier /\<_*[a-z][_a-z0-9]*\>/
 
 syn match reprotoCustomType /\<[A-Z][_a-zA-Z0-9]*\>/
 syn keyword reprotoType float double boolean string bytes datetime u32 u64 i32 i64
