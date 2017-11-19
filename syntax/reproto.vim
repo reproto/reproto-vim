@@ -12,11 +12,13 @@ syn cluster reprotoCommentGrp contains=reprotoTodo
 
 syn keyword reprotoTodo contained TODO FIXME XXX
 
+syn match reprotoSyntax /?/
+syn match reprotoSyntax /@/
 syn keyword reprotoSyntax use as stream
 syn keyword reprotoStorageClass type interface enum tuple service
-syn match reprotoField /\<[a-zA-Z][_a-zA-Z0-9]*\s*?\?\(\s*:\)\@=/
+syn match reprotoIdentifier /\<[a-z][_a-z0-9]*\>/
 
-syn match reprotoType /\<[A-Z][_a-zA-Z0-9]*\>/
+syn match reprotoCustomType /\<[A-Z][_a-zA-Z0-9]*\>/
 syn keyword reprotoType float double boolean string bytes datetime u32 u64 i32 i64
 
 syn keyword reprotoBool true false
@@ -28,12 +30,18 @@ syn region reprotoCommentLine start="//" skip="\\$" end="$" contains=@reprotoCom
 syn region reprotoItemDoc start="///" end="$" contains=@reprotoCommentGrp,@Spell
 syn region reprotoPackageDoc start="//!" end="$" contains=@reprotoCommentGrp,@Spell
 
+syn match reprotoPackage /\(use\s\+\)\@<=[a-zA-Z][_a-z0-9]*\(\.[a-zA-Z][_a-z0-9]*\)\+/
+syn match reprotoAs /\(as\s\+\)\@<=[a-zA-Z][_a-z0-9]*/
+syn match reprotoPrefix /\<[a-z][_a-z0-9]*\(\s*::\)\@=\>/
+syn match reprotoVersionReq /\(@\s*\)\@<=\([<>=~\^]*\)[0-9]\+\(\.[0-9]\+\)*\(-[a-zA-Z0-9]\+\)\?/
+
 hi def link reprotoTodo Todo
 
-hi def link reprotoSyntax Include
+hi def link reprotoSyntax StorageClass
 hi def link reprotoStorageClass StorageClass
-hi def link reprotoField Statement
+hi def link reprotoIdentifier Statement
 
+hi def link reprotoCustomType Type
 hi def link reprotoType Type
 
 hi def link reprotoBool Boolean
@@ -44,5 +52,10 @@ hi def link reprotoComment Comment
 hi def link reprotoCommentLine Comment
 hi def link reprotoItemDoc SpecialComment
 hi def link reprotoPackageDoc SpecialComment
+
+hi def link reprotoPackage Include
+hi def link reprotoAs Include
+hi def link reprotoPrefix Include
+hi def link reprotoVersionReq Number
 
 let b:current_syntax = "reproto"
