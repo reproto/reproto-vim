@@ -21,7 +21,7 @@ syn match reprotoSyntax /@/
 syn keyword reprotoSyntax use as stream option
 syn keyword reprotoStorageClass type interface enum tuple service
 
-syn keyword reprotoType float double boolean string bytes datetime u32 u64 i32 i64
+syn keyword reprotoType any float double boolean string bytes datetime u32 u64 i32 i64
 
 syn keyword reprotoBool true false
 syn match reprotoNumber /-\?\<\d\+\(\.\d\+\)\?\>/
